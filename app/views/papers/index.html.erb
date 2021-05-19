@@ -1,0 +1,37 @@
+
+<p id="notice"><%= notice %></p>
+<table class="table m-cust">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Paper Year</th>
+      <th>Download Paper</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @papers.each do |paper| %>
+      <tr>
+        <td><%= paper.title %></td>
+        <td><%= paper.description %></td>
+        <td><%= paper.category.name %></td>
+        <td><%= paper.month.month_name.to_s + "-" + paper.year.paper_year.to_s %></td>
+        <td><%= paper.file.filename %></td>
+        <% if current_user && current_user.admin %>
+        <td><%= link_to 'View Paper', paper %></td>
+        <% elsif  current_user.is_student %>
+        <td><%= link_to 'View Paper', paper %></td>
+        <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
+        <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paper', new_paper_path, class:'btn btn-success' %>

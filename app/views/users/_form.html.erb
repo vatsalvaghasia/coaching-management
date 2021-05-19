@@ -1,0 +1,45 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container-fluid m-auto w-25">
+<div class="card m-cust">
+<article class="card-body">
+    <%= link_to 'Sign In',login_path,class:'float-right btn btn-outline-primary' %>
+<h4 class="card-title mb-4 mt-1">Sign Up</h4>
+     <form>
+    <div class="form-group">
+      <%= form.label :email %>
+    <%= form.text_field :email ,class:'form-control',placeholder:'Emails' %>
+    </div> <!-- form-group// -->
+    <div class="form-group">
+        <a class="float-right" href="#">Forgot?</a>
+        <%= form.label :'Your password' %>
+        <%= form.password_field :password, class:'form-control',placeholder:'******' %>
+    </div> <!-- form-group// --> 
+    <div class="form-group"> 
+    <div class="checkbox">
+      <label> <input type="checkbox"> Save password </label>
+    </div> <!-- checkbox .// -->
+    </div> <!-- form-group// -->  
+    <div class="form-group">
+      <%= form.label :'Confirm password' %>
+    <%= form.password_field :password_confirmation,class:'form-control',placeholder:'******' %>
+    </div>
+    <div class="form-group">
+        <%= form.submit:'Login' ,class:'btn btn-primary btn-block'%>
+    </div> <!-- form-group// -->                                                           
+</form>
+</article>
+</div>
+</div>
+<% end %>

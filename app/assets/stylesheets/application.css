@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.m-cust{
+	margin-top: 5em;
+}
+body{
+	font-family: 'Montserrat', sans-serif;
+	margin:0 !important;
+}
+.navbar{
+	height:5em;
+}
+.nav-item{
+	font-size:16px;
+	padding:0px 15px;
+}
+
+.list-home{
+	padding:15px;
+	width:100%;
+	list-style: none;
+	margin: 0 auto;
+}
+.list-home li{
+	border-bottom: 1px solid black;
+	padding:5px;
+	margin: 0 auto;
+}
+.card{
+	border:none;
+	background-color: rgba(135, 206, 235, 0.5);
+	border-radius: 25px;
+}
+
+.cust-bg-img{
+	// background-image: url("https://www.chevening.org/wp-content/uploads/2019/08/studying-in-the-uk.jpg"); 
+}
+
+.p-10{
+	padding:150px;
+}
+
+.card-login{
+	background-color: rgba(0, 0, 0, 0.8	);
+	border:none;
+	border-radius: 25px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . .";
+}
