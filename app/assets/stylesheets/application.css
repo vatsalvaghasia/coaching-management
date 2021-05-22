@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .m-cust-log-reg{
+ 	margin-top: 10em;
+	margin-bottom: 5em;
+ }
 .m-cust{
 	margin-top: 5em;
 }
@@ -41,19 +46,18 @@ body{
 }
 .card{
 	border:none;
-	background-color: rgba(135, 206, 235, 0.5);
+	background-color: rgba(135, 206, 235, 0.8);
 	border-radius: 25px;
 }
 
 .cust-bg-img{
-	// background-image: url("https://www.chevening.org/wp-content/uploads/2019/08/studying-in-the-uk.jpg"); 
+	background-image: url("https://www.chevening.org/wp-content/uploads/2019/08/studying-in-the-uk.jpg"); 
 }
-
 .p-10{
-	padding:150px;
+	padding:100px;
 }
 
-.card-login{
+.democlass-card{
 	background-color: rgba(0, 0, 0, 0.8	);
 	border:none;
 	border-radius: 25px;
@@ -61,11 +65,97 @@ body{
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    ". . . ."
-    ". . . ."
-    ". . . .";
+    ". . ."
+    ". . ."
+    ". . .";
+}
+
+.grid-container div{
+	margin:0 auto;
+	text-align: center;
+	padding:10px;
+}
+.service-grid-element{
+	text-align: center;
+	width:100px;
+	height:100px;
+	border:3px solid blue;
+	background-color: white;
+	border-radius: 50%;
+}
+.font-cust-size{
+	color:blue;
+	font-weight: 700; 
+	font-size:14px !important;
+}
+.service-grid-element>i{
+	color: blue;
+	margin-top:10px;
+}
+.card-signin{
+	width:40% !important;
+}
+
+.user-icon-align{
+	margin-right: 10px;
+	margin-top: -27px;
+	float:right;
+}
+/* Custom Colors */
+ /* Navbar Red Color */
+.container-fluid-nav{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.navbar-nav{
+	padding-right: 15px;
+}
+ .bg-red{
+ 	background-color: #D22B2B;
+ }
+ .navbar{
+ 	margin:0;
+ 	padding:0;
+ }
+.nav-link{
+	color:#fff !important;
+}	
+ .nav-item:hover{
+ 	border-radius: 5px;
+	background-color:blue;
+ }
+
+/*Social Media icons*/
+.fab{
+	color:white;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.footer-nav-socials a{
+	text-decoration: none;
+}
+
+/* Header Dropdown*/
+.dropdown:hover .dropdown-menu {
+	border:1px solid grey;
+    display: block;
+    margin-top: 0;
+ }
+
+ /* Back to top button */
+ #btn-back-to-top {
+ 	border:1px solid darkgrey;
+ border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
+.navbar{
+	box-shadow: 0px 8px 8px -6px rgba(0,0,0,.5);
 }

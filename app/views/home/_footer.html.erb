@@ -1,18 +1,17 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-dark text-muted">
+<footer class="text-center text-lg-start bg-red text-white">
   <!-- Section: Social media -->
   <section
-    class="container d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <!-- Left -->
+    class="container d-flex justify-content-center footer-nav-socials p-4 border-bottom">
+    <!--
     <div class="me-5 d-none d-lg-block">
       <span>Get connected with us on social networks:</span>
-    </div>
-    <!-- Left -->
+    </div> -->
 
     <!-- Right -->
     <div>
       <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-facebook"></i>
       </a>
       <a href="" class="me-4 text-reset">
         <i class="fab fa-twitter"></i>
@@ -59,16 +58,16 @@
             Company
           </h6>
           <p>
-            <%= link_to 'About Us',home_about_path,class:'text-reset'%>
+            <%= link_to 'About Us',home_about_path,class:'text-white'%>
           </p>
           <p>
-            <%= link_to 'Achievements',home_about_path,class:'text-reset'%>
+            <%= link_to 'Achievements',home_about_path,class:'text-white'%>
           </p>
           <p>
-            <%= link_to 'Privacy Policy',home_about_path,class:'text-reset'%>
+            <%= link_to 'Privacy Policy',home_about_path,class:'text-white'%>
           </p>
           <p>
-            <%= link_to 'Support',home_about_path,class:'text-reset'%>
+            <%= link_to 'Support',home_about_path,class:'text-white'%>
           </p>
         </div>
         <!-- Grid column -->
@@ -80,11 +79,11 @@
             Useful links
           </h6>
           <p>
-            <%= link_to 'Sign Up', signup_path%>
+            <%= link_to 'Sign Up', signup_path,class:'text-white'%>
             <% Category.all.each do |f| %>
             <% if f.display_in_navbar %>
             <p>
-                <%= link_to f.name,signup_path,class:"text-reset" %>
+                <%= link_to f.name,signup_path,class:"text-white" %>
                 </p>
               <% end %>
              <% end %> 

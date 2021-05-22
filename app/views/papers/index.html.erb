@@ -1,4 +1,3 @@
-
 <p id="notice"><%= notice %></p>
 <table class="table m-cust">
   <thead>
@@ -20,9 +19,7 @@
         <td><%= paper.category.name %></td>
         <td><%= paper.month.month_name.to_s + "-" + paper.year.paper_year.to_s %></td>
         <td><%= paper.file.filename %></td>
-        <% if current_user && current_user.admin %>
-        <td><%= link_to 'View Paper', paper %></td>
-        <% elsif  current_user.is_student %>
+        <% if current_user %>
         <td><%= link_to 'View Paper', paper %></td>
         <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
         <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,6 +1,5 @@
 class PapersController < ApplicationController
   before_action :set_paper, only: %i[ show edit update destroy ]
-  before_action :must_be_admin
   # GET /papers or /papers.json
   def index
     if params.has_key?(:category)
@@ -23,12 +22,6 @@ class PapersController < ApplicationController
   # GET /papers/1/edit
   def edit
   end
-
-  def must_be_admin
-  unless current_user && current_user.admin?
-    redirect_to root_path, notice: "Admin Needed."
-  end
-end
 
   # POST /papers or /papers.json
   def create

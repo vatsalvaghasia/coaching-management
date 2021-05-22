@@ -1,4 +1,68 @@
- <div id="carouselExampleIndicators" class="carousel slide m-cust" data-ride="carousel">
+<div class="container-fluid p-10 cust-bg-img  m-cust">
+  <div class="row">
+    <div class="col-5">
+      <div class="grid-container">
+        <div><div class = "service-grid-element text-blue-bold"><i class="fas fa-3x fa-tasks"></i></div><div class = 'font-cust-size'>PAPER PATTERN AND SYLLABUS</div></div>
+        <div><div class = "service-grid-element"><i class="fas fa-3x fa-book"></i></div><div class = 'font-cust-size'>LIBRARY RESOURCES</div></div>
+        <div><div class = "service-grid-element"><i class="far fa-3x fa-handshake"></i></div><div class = 'font-cust-size'>CONNECT WITH PEERS</div></div>
+        <div><div class = "service-grid-element"><i class="far fa-3x fa-star"></i></div><div class = 'font-cust-size'>MOCK TESTS</div></div>
+        <div><div class = "service-grid-element"><i class="fas fa-3x fa-chart-bar"></i></div><div class = 'font-cust-size'>PROGRESS</div></div>
+        <div><div class = "service-grid-element"><i class="fas fa-3x fa-question"></i></div><div class = 'font-cust-size'>FAQs</div></div>
+      </div>
+    </div>
+    <div class="col align-self-center">
+     <div class="card" style="width: 10rem;">
+  <ul class="list-home">
+  <li class=""><strong>1800</strong> Students</li>
+  <li class=""><strong>60</strong> Faculties</li>
+  <li class=""><strong>8</strong> Centers</li>
+  <li class=""><strong>4</strong> Courses</li>
+  <li class=""><strong>1</strong> Institute</li>
+</ul>
+</div>
+    </div>
+    <div class="col">
+      <div class="democlass-card">
+       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<article class="card-body">
+<h4 class="card-title text-white text-center mb-4 mt-1">Quick Demo Class</h4>
+     <form>
+      <div class="form-group">
+    <%= f.text_field :email, autocomplete: "email",class:'form-control',placeholder:'Student Name'%>
+    <i class="fa fa-user user-icon-align"></i>
+    </div>
+    <div class="form-group">
+    <%= f.text_field :email, autocomplete: "email",class:'form-control',placeholder:'Institute'%>
+    </div>
+    <div class="form-group">
+    <%= f.text_field :email, autocomplete: "email",class:'form-control',placeholder:'Email Id'%>
+    </div>
+    <div class="form-group">
+    <%= f.text_field :email, autocomplete: "email",class:'form-control',placeholder:'Phone'%>
+    </div> 
+    <div class="form-group">
+      <%= f.submit "Submit",class:'btn btn-primary btn-block'%>
+    </div> <!-- form-group// -->                                                           
+
+      <p id="alert"><%= alert %></p>
+</form>
+</article>
+<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% Paper.all.each do |user| %>
+  <%= link_to user.file.filename,Rails.application.routes.url_helpers.rails_blob_path(user.file, only_path: true) , Download:''%>
+<% end %>
+
+<!-- Back to top Button -->
+<button type="button" class="btn bg-red text-white btn-floating btn-lg" id="btn-back-to-top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+
+ <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -15,6 +79,7 @@
     </div>
 
   </div>
+</div>
 <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -23,67 +88,4 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a> -->
-
-<div class="container-fluid p-10 cust-bg-img">
-  <div class="row">
-    <div class="col-sm">
-      <div class="grid-container">
-        <div>Hello</div>
-        <div>Hello</div>
-        <div>Hello</div>
-        <div>Hello</div>
-        <div>Hello</div>
-        <div>Hello</div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="card" style="width: 10rem;">
-  <ul class="list-home">
-  <li class=""><strong>1800</strong> Students</li>
-  <li class=""><strong>60</strong> Faculties</li>
-  <li class=""><strong>8</strong> Centers</li>
-  <li class=""><strong>4</strong> Courses</li>
-  <li class=""><strong>1</strong> Institute</li>
-</ul>
-</div>
-    </div>
-    <div class="col-sm">
-<%= form_tag sessions_path do |form| %>
-<div class="card-login">
-<article class="card-body">
-    <%= link_to 'Sign Up',signup_path,class:'float-right btn btn-outline-primary' %>
-<h4 class="card-title mb-4 mt-1">Sign in</h4>
-     <form>
-    <div class="form-group">
-    <%= label_tag :email %>
-    <%= text_field_tag :'email',"",class:'form-control',placeholder:'Emails'%>
-    </div> <!-- form-group// -->
-    <div class="form-group">
-        <a class="float-right" href="#">Forgot?</a>
-        <%= label_tag :'Your password' %>
-    <%= password_field_tag :'password',"", class:'form-control',placeholder:'******' %>
-    </div> <!-- form-group// --> 
-    <div class="form-group"> 
-    <div class="checkbox">
-      <label> <input type="checkbox"> Save password </label>
-    </div> <!-- checkbox .// -->
-    </div> <!-- form-group// -->  
-    <div class="form-group">
-      <%= submit_tag "Login" ,class:'btn btn-primary btn-block' %>
-    </div> <!-- form-group// -->                                                           
-
-      <p id="alert"><%= alert %></p>
-</form>
-</article>
-</div>
-<% end %>
-    </div>
-  </div>
-</div>
-
-
-
-<% Paper.all.each do |user| %>
-  <%= link_to user.file.filename,Rails.application.routes.url_helpers.rails_blob_path(user.file, only_path: true) , Download:''%>
-<% end %>
 
