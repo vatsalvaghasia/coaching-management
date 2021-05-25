@@ -1,6 +1,9 @@
-<h1>Editing Paper</h1>
+<div class="m-cust container w-50">
+<center><h1>Edit Paper</h1></center>
 
 <%= render 'form', paper: @paper %>
 
-<%= link_to 'Show', @paper %> |
-<%= link_to 'Back', papers_path %>
+<%= link_to 'Show', @paper ,class: "btn btn-danger" %> |
+<%= link_to 'Back', papers_path ,class: "btn btn-danger" %>
+
+</div>

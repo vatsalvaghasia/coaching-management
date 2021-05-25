@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/index'
   devise_for :users
   resources :papers
   resources :months
@@ -18,5 +19,5 @@ get 'signup' => 'users#new', :as => 'signup'
 get 'login' => 'devise/sessions#new', :as => 'login'
 get 'logout' => 'devise/sessions#destroy', :as => 'logout' 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
+match '/users',   to: 'users#index',   via: 'get'
 end

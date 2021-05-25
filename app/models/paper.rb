@@ -3,4 +3,5 @@ class Paper < ApplicationRecord
   belongs_to :category
   belongs_to :month
   belongs_to :year
+  resourcify
 end

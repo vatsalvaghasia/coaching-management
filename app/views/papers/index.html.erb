@@ -1,13 +1,16 @@
 <p id="notice"><%= notice %></p>
-<table class="table m-cust">
-  <thead>
+<div class="container">
+<table class="table table-striped table-bordered" id="myTable">
+  <thead class="thead-dark">
     <tr>
       <th>Title</th>
       <th>Description</th>
       <th>Category</th>
       <th>Paper Year</th>
       <th>Download Paper</th>
-      <th colspan="3">Actions</th>
+      <th>Actions</th>
+      <th>Actions</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -19,16 +22,43 @@
         <td><%= paper.category.name %></td>
         <td><%= paper.month.month_name.to_s + "-" + paper.year.paper_year.to_s %></td>
         <td><%= paper.file.filename %></td>
-        <% if current_user %>
+        <% if has_role(:admin) %>
         <td><%= link_to 'View Paper', paper %></td>
         <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
         <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+        <td><%= link_to 'View Paper', paper %></td>
+        <td>hh</td>
+        <td>hh</td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<%= link_to 'New Paper', new_paper_path, class:'btn btn-success' %>
+</div>
+<br>
 <br>
 
-<%= link_to 'New Paper', new_paper_path, class:'btn btn-success' %>
+
+<!-- <table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
+    </tbody>
+</table>
+<br> -->
+
+

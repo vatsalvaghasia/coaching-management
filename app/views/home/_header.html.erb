@@ -1,40 +1,40 @@
-  <nav class="navbar fixed-top navbar-expand-lg bg-red shadow-lg">
+  <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-red boxshadow">
     <div class="container-fluid container-fluid-nav"> 
-  <%= link_to image_tag('logo.png',:width =>'200',:height=>'80',class: "d-inline-block align-top"),root_path,class:"navbar-brand"%>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <%= link_to image_tag('logo.png',:width =>'200',:height=>'80'),root_path,class:"navbar-brand" %>
+      <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item bg-red">
           	<%= link_to 'About Us',home_about_path,class:'nav-link'%>
           </li>
           <li class="nav-item">
 
             <div class="dropdown">
-              <%= link_to 'Courses',"#",class:'dropdown-toggle nav-link dropleft',data: {toggle: "dropdown"}, aria: {haspopup:true,expanded:false},id:"dropdownMenu2" %>
-  <div class="dropdown-menu bg-red dropdown-position" aria-labelledby="dropdownMenu2">
+              <%= link_to 'Courses',"#",class:'dropdown-toggle nav-link',data: {toggle: "dropdown"}, aria: {haspopup:true,expanded:false},id:"dropdownMenu2" %>
+  <div class="dropdown-menu dropdown-position" aria-labelledby="dropdownMenu2">
     <% Category.all.each do |f| %>
             <% if f.display_in_navbar %>
-            <%= link_to f.name ,papers_path(category: f.name) ,class:'nav-link'%>
+            <%= link_to f.name ,papers_path(category: f.name) ,class:'nav-cat-link d-block'%>
               <% end %>
             <% end %>
   </div>
 </div>
           </li>
           <% if current_user %>
-          <li class="nav-item">
+          <li class="nav-item bg-red">
               <%= link_to 'Log Out', destroy_user_session_path,method: :delete,class:'nav-link' %>
           </li>
            <% else %>
-           <li class="nav-item">
+           <li class="nav-item bg-red">
             <%= link_to 'Sign Up', new_user_registration_path,class:'nav-link' %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item bg-red">
             <%= link_to 'Login',new_user_session_path,class:'nav-link'%>
           </li>
           <% end %>
-          <li class="nav-item">
+          <li class="nav-item bg-red">
             <%= link_to 'Contact Us',home_contact_path,class:'nav-link'%>
           </li>
         </ul>

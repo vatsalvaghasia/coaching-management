@@ -10,23 +10,17 @@
 
     <!-- Right -->
     <div>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook"></i>
+      <a href="" class="text-reset">
+        <i class="fab fa-2x fa-facebook-f"></i>
       </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
+      <a href="" class="text-reset">
+        <i class="fab fa-2x fa-twitter"></i>
       </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
+      <a href="" class="text-reset">
+        <i class="fab fa-2x fa-instagram"></i>
       </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
+      <a href="" class="text-reset">
+        <i class="fab fa-2x fa-linkedin"></i>
       </a>
     </div>
     <!-- Right -->
@@ -72,23 +66,7 @@
         </div>
         <!-- Grid column -->
 
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
-          </h6>
-          <p>
-            <%= link_to 'Sign Up', signup_path,class:'text-white'%>
-            <% Category.all.each do |f| %>
-            <% if f.display_in_navbar %>
-            <p>
-                <%= link_to f.name,signup_path,class:"text-white" %>
-                </p>
-              <% end %>
-             <% end %> 
-        </div>
-        <!-- Grid column -->
+        
 
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -105,16 +83,38 @@
           <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
         </div>
         <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Our Location
+          </h6>
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=A4/501,%20Celebrity%20Green,%20Near%20Happy%20Hallmark%20Shoppers,%20Vesu%20Abhava%20Road,%20surat,%20gujarat&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+              <a href="https://www.whatismyip-address.com/divi-discount/"></a><br>
+              <style>.mapouter{position:relative;margin-left:-60px;height:200px;width:300px;}</style>
+              <a href="https://www.embedgooglemap.net">how to add google map</a>
+              <style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:300px;}</style>
+            </div>
+          </div> 
+        </div>
+        <!-- Grid column -->
       </div>
+
+
       <!-- Grid row -->
     </div>
+
+
   </section>
   <!-- Section: Links  -->
 
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+  <div class="text-center copyright-area p-4 font-red fw-bolder">
     © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">BeingDigital.com</a>
+    <a class="text-reset font-red fw-bolder" href="https://mdbootstrap.com/">BeingDigital.com</a>
   </div>
   <!-- Copyright -->
 </footer>
