@@ -9,4 +9,6 @@ class HomeController < ApplicationController
   end
   def signup
   end
+  def admin
+  end
 end

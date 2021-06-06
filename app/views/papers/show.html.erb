@@ -1,35 +1,47 @@
-<p id="notice"><%= notice %></p>
+<% if has_role(:admin) %>
+<div class="container m-cust mt-5 text-center">
+  <h1>Paper Details</h1>
+  <div class="row mt-3">
+<table class="col-6 m-auto table table-bordered table-striped">
+  <thead class="thead-dark">
+      <th class="text-center">Label</th>
+      <th class="text-center">Details</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Title</strong></td>
+      <td><%= @paper.title %></td>
+    </tr>
+    <tr>
+      <td><strong>Description</strong></td>
+      <td><%= @paper.description %></td>
+    </tr>
+    <tr>
+      <td><strong>Category</strong></td>
+      <td><%= @paper.category.name %></td>
+    </tr>
+    <tr>
+      <td><strong>Download File</strong></td>
 
-<p>
-  <strong>Title:</strong>
-  <%= @paper.title %>
-</p>
+      <td> <%= link_to 'View File',rails_storage_redirect_path(@paper.file),target: "_blank"%> || <%= link_to 'Download File',@paper.file , Download:'' %></td>
+    </tr>
+    <tr>
+      <td><strong>Month</strong></td>
+      <td><%= @paper.month.month_name %></td>
+    </tr>
+    <tr>
+      <td><strong>Year</strong></td>
+      <td><%= @paper.year.paper_year %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="row mt-4">
+  <div class="m-auto">
+    <%= link_to 'Edit', edit_paper_path(@paper), class:'btn btn-success'%>|
+    <%= link_to 'Back', papers_path ,class:'btn btn-primary' %>    
+  </div> 
+</div>
+</div>
+<% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @paper.description %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @paper.category.name %>
-</p>
-
-
-<p>
-  <strong>Download File:</strong>
-  <%= link_to 'Download Paper',@paper.file , Download:'' %>
-</p>
-
-<p>
-  <strong>Month:</strong>
-  <%= @paper.month.month_number %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @paper.year.paper_year %>
-</p>
-
-<%= link_to 'Edit', edit_paper_path(@paper) %> |
-<%= link_to 'Back', papers_path %>

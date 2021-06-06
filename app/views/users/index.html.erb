@@ -1,5 +1,30 @@
-<h1 class="m-cust">Users#index</h1>
-<% @users.each do |user| %>
-  <%= user.email %><br/>
-  <%= user.id %><br/>
+<% if has_role(:admin) %>
+<div class="container m-cust float-right">
+<h1 class="m-cust">Admin</h1>
+<p id="notice " class="alert alert-warning d-none"><%= notice %></p>
+<table id="userTable" class="table table-striped table-bordered">
+  <thead class="thead-dark">
+    <th>Id</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+  <%# if user.has_role?(:admin)%>
+  <td><%= user.id %></td>
+  <td><%= user.email %></td>
+  <td><%= user.profile_name %></td>
+  <td><%= link_to '<i class="far fa-eye"></i>'.html_safe, user %>
+    <%= link_to '<i class="fas fa-trash"></i>'.html_safe, user, method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= link_to '<i class="fas fa-edit"></i>'.html_safe ,edit_user_registration_path(user)%></td>
+  <%# end %>
+</tr>
+<% end %>
+  </tbody>
+</table>
+</div>
+<% else %>
+raise ActionController::RoutingError.new('Not Found')
 <% end %>

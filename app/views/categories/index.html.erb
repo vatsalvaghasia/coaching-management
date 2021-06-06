@@ -1,13 +1,14 @@
+<div class="container m-cust float-right">
 <p id="notice"><%= notice %></p>
 
-<h1>Categories</h1>
+<h1>Paper Categories</h1>
 
-<table>
-  <thead>
+<table id="categoryTable" class="table table-striped table-bordered">
+  <thead class="thead-dark">
     <tr>
       <th>Name</th>
       <th>Display in navbar</th>
-      <th colspan="3"></th>
+      <th>Action</th>
     </tr>
   </thead>
 
@@ -16,9 +17,9 @@
       <tr>
         <td><%= category.name %></td>
         <td><%= category.display_in_navbar %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<i class="far fa-eye"></i>'.html_safe, category %>
+        <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_category_path(category) %>
+        <%= link_to '<i class="fas fa-trash"></i>'.html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,5 @@
 
 <br>
 
-<%= link_to 'New Category', new_category_path %>
+<%= link_to 'New Category', new_category_path, class:'btn btn-success' %>
+</div>

@@ -10,18 +10,21 @@
           	<%= link_to 'About Us',home_about_path,class:'nav-link'%>
           </li>
           <li class="nav-item">
+            <%= link_to 'Our Courses',home_courses_path,class:'nav-link'%>
+          </li>
+          <!-- <li class="nav-item">
 
             <div class="dropdown">
-              <%= link_to 'Courses',"#",class:'dropdown-toggle nav-link',data: {toggle: "dropdown"}, aria: {haspopup:true,expanded:false},id:"dropdownMenu2" %>
+              <#%= link_to 'Courses',"#",class:'dropdown-toggle nav-link',data: {toggle: "dropdown"}, aria: {haspopup:true,expanded:false},id:"dropdownMenu2" %>
   <div class="dropdown-menu dropdown-position" aria-labelledby="dropdownMenu2">
-    <% Category.all.each do |f| %>
-            <% if f.display_in_navbar %>
-            <%= link_to f.name ,papers_path(category: f.name) ,class:'nav-cat-link d-block'%>
-              <% end %>
-            <% end %>
+    <#% Category.all.each do |f| %>
+            <#% if f.display_in_navbar %>
+            <#%= link_to f.name ,papers_path(category: f.name) ,class:'nav-cat-link d-block'%>
+              <#% end %>
+            <#% end %>
   </div>
 </div>
-          </li>
+          </li> -->
           <% if current_user %>
           <li class="nav-item bg-red">
               <%= link_to 'Log Out', destroy_user_session_path,method: :delete,class:'nav-link' %>
