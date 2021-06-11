@@ -21,7 +21,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
       
-<!-- Stylesheets for admin adn guests/other users -->
+<!-- Stylesheets for admin and guests/other users -->
     <% if has_role(:admin) %>
     <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
     <% else %>
@@ -35,7 +35,7 @@
 
   <% if has_role(:admin) %>
   $('#myTable').DataTable();
-  $('#userTable').DataTable();
+  $('#userTable , #t-table').DataTable();
   $('#categoryTable').DataTable();
    $('.button-left').click(function(){
        $('.sidebar').toggleClass('fliph');

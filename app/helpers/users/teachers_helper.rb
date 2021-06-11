@@ -1,0 +1,2 @@
+module Users::TeachersHelper
+end

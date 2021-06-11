@@ -1,0 +1,19 @@
+<div class="container m-cust float-right">
+<h1>Students</h1>
+<table id="t-table" class="table table-bordered table-striped">
+<thead class= "thead-dark">
+	<th>Id</th>
+	<th>Email</th>
+</thead>
+<tbody>
+	<% @students.each do |t|%>
+	<%#  if t.has_role?(:admin) %>
+<tr>
+	<td><%= t.id %></td>
+	<td><%= t.email %></td>
+<tr>
+	<%# end %>
+<% end %>
+</tbody>
+</table>
+</div>

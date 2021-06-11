@@ -1,0 +1,30 @@
+<div class= "container-fluid cust-bg-img m-cust p-5">
+<div class="row">
+  <div class="card-signin col-lg-4 p-4 m-auto">
+<h2 class="text-center">Student Login</h2>
+<hr class="custom-hr">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "students/shared/error_messages", resource: resource %>
+  <div class="form-group">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:'Enter email' ,class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.password_field :password, autocomplete: "current-password",placeholder:'Enter Password',class:'form-control' %>
+  </div>
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+    <%= f.submit "Login" ,class:'btn btn-danger bg-red form-control'%>
+
+<% end %>
+</div>
+
+</div>
+<div class="mb-4"></div> 
+<%#= render "students/shared/links" %>
+</div>

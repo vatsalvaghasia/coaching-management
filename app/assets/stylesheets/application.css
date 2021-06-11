@@ -371,11 +371,14 @@ div.contact-us-card{
 
 
 /* Sign in Card*/
-.card-signin{
- 	box-shadow: 0px 0px 20px rgba(0,0,0,1);
+.card-signin{	
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
 	border-radius:20px;
 	background-color: rgb(255,179,179,0.8);
 	border:1px solid #fd5949;
+}
+.card-signin:hover{
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
 }
 
 /* Courses */

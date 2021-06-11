@@ -1,0 +1,25 @@
+<div class="container m-cust float-right">
+<h1>Teachers</h1>
+<table id="t-table" class="table table-bordered table-striped">
+<thead class= "thead-dark">
+	<th>Id</th>
+	<th>Email</th>
+	<th>Actions</th>
+</thead>
+<tbody>
+	<% @teacher.each do |t|%>
+<tr>
+	<td><%= t.id %></td>
+	<td><%= t.email %><%= t.roles_name%></td>
+	<td>
+		<%#= link_to '<i class="far fa-eye"></i>'.html_safe %>
+            <%#= link_to '<i class="far fa-eye"></i>'.html_safe, student %>
+        <%= link_to '<i class="far fa-edit"></i>'.html_safe, users_teachers_edit_path(t.id) %>
+        <%= link_to '<i class="fas fa-trash"></i>'.html_safe, teacher_registration_path(t), :method => :delete, :confirm => "You sure?" %>
+        <%#= link_to '<i class="fas fa-trash"></i>'.html_safe, paper, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</td>
+<tr>
+<% end %>
+</tbody>
+</table>
+</div>

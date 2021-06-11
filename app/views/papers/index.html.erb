@@ -24,7 +24,7 @@
         <td><%= paper.category.name %></td>
         <td><%= paper.month.month_name.to_s + "-" + paper.year.paper_year.to_s %></td>
         <td><%= link_to paper.category.name + "_" + paper.month.month_name.to_s + "-" + paper.year.paper_year.to_s ,Rails.application.routes.url_helpers.rails_blob_path(paper.file, only_path: true) , Download:''%></td>
-        <% if can? :update , paper %>
+        <% if has_role(:admin) || has_role(:teacher) %>
         <td>
             <%= link_to '<i class="far fa-eye"></i>'.html_safe, paper %>
             <%#= link_to '<i class="far fa-eye"></i>'.html_safe, paper %>
