@@ -34,4 +34,8 @@ end
 def is_student_admin?
 		current_student && current_student.has_role?(:admin)
 	end
+
+def student_show
+  @student = Student.find(params[:id])
+  end
 end

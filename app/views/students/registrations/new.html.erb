@@ -16,10 +16,18 @@
     <%= f.password_field :password, autocomplete: "new-password",placeholder:'Enter Password',class:'form-control' %>
     <small class="form-text text-muted">(<%= @minimum_password_length %> characters minimum)</small>
   </div>
+  <div class="form-group">
+    <%= f.text_field :name , autocomplete: "name",placeholder:'Student Name',class:'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :phone, autocomplete: "phone",placeholder:'Student Phone',class:'form-control' %>
+  </div>
 
   <div class="form-group">
     <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:'Re-enter Password',class:'form-control' %>
   </div>
+
+
 
 
     <%= f.submit "Sign up" ,class:'btn btn-danger bg-red form-control'%>

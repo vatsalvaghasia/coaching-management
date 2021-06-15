@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :users do
     get 'students/index'
+    resources :students, only: [:index, :show]
   end
   namespace :users do
     get 'teachers/index'
@@ -13,7 +14,8 @@ Rails.application.routes.draw do
   devise_for :students, controllers: {
         sessions: 'students/sessions'
       }
-# resources :users, :only =>[:show,:update]
+
+
   resources :papers
   resources :months
   resources :years
@@ -28,13 +30,13 @@ Rails.application.routes.draw do
   get 'home/about'
   #get 'home/admin'
   root 'home#index'
-  match '/users/students',   to: 'users/students#index',   via: 'get'
+  
   match '/users/teachers',   to: 'users/teachers#index',   via: 'get'
   match '/users/teachers/edit',   to: 'users/teachers#edit',   via: 'get'
 resources :sessions, :only => [:create]
 #   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 # match '/users',   to: 'users#index',   via: 'get'
 # match '/users/:id',     to: 'users#show', via: 'get'
-match 'users/teachers/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
-
+match '/users/students',   to: 'users/students#index',   via: 'get'
+match '/users/students/:id',     to: 'users/students#show',       via: 'get'
 end
