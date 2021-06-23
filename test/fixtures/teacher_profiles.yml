@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  experience: 1.5
+  subject: MyString
+  mode_to_teach: false
+
+two:
+  name: MyString
+  email: MyString
+  experience: 1.5
+  subject: MyString
+  mode_to_teach: false

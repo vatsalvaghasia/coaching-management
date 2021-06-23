@@ -1,0 +1,111 @@
+    <%= form_with(model: course) do |form| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+        <% course.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.text_field :c_name ,placeholder:'Course Name',class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_area :c_desc ,placeholder:'Description',class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :"Image for Description" %>
+    <%= form.file_field :image1 ,class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :c_level ,placeholder:'Course Level',class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :c_structure ,placeholder:'Structure' ,class:'form-control'%>
+    <small>Upload or Default will be added</small>
+  </div>
+
+  <div class="form-group">
+    <%#= form.label :Mode %>
+    <%#= form.check_box :c_mode ,placeholder:'Mode',class:'form-control'%>
+    <%= form.label :Mode ,class:'mr-5 font-weight-bold'%>
+    <%= form.check_box :c_mode ,id:'check'%>
+    <%= form.label 'Online' ,for:'check'%>
+    <small class="form-text text-muted">(Check the box if mode of teaching is online else default is offline)</small>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :c_location ,placeholder:'Location',class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.number_field :c_duration ,placeholder:'Course Duration',class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :c_days ,placeholder:'Course Days',class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :c_time ,placeholder:'Timings',class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.number_field :c_age ,placeholder:'Minimum Age',class:'form-control mt-3'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :c_detailed_structure ,placeholder:'Course Structure',class:'form-control'%><br>
+    <small>Format : '|' => new item <br> '=' => has subitems <br> ';' => new subitem <br>Ex. item1=sub1;sub2;sub3|item2|item3=sub1;sub2;sub3</small>
+    <small>
+    <ol>
+      <li>item1
+        <ul>
+          <li>sub1</li>
+          <li>sub2</li>
+          <li>sub3</li>
+        </ul>
+      </li>
+      <li>item2</li>
+      <li>item3
+        <ul>
+          <li>sub1</li>
+          <li>sub2</li>
+          <li>sub3</li>
+        </ul>
+      </li>  
+    </ol></small>
+  </div>
+
+   <div class="form-group">
+    <%= form.label :"Image for Structure" %>
+    <%= form.file_field :image2 ,class:'form-control'%>
+    <small>Upload or default will be addded</small>
+  </div>
+  <div class="form-group">
+    <%= form.text_field :c_requirements,placeholder:'Requirements',class:'form-control' %><br>
+    <small>Format : ';' => new requirement <br> Ex. item1;item2;item3<br>
+      <ol>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+      </ol>
+    </small>
+  </div>
+  <div class="form-group">
+    <%= form.label :"Image for Reqirements" %>
+    <%= form.file_field :image3 ,class:'form-control'%>
+    <small>Upload or default will be addded</small>
+  </div>
+  <div class="actions">
+    <%= form.submit 'Add Course',class:'btn btn-danger' %>
+  </div>
+<% end %>
+

@@ -6,7 +6,7 @@
         Header
         =======================-->
         <header class="header">
-          <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
+          <nav class="navbar navbar-fluid navbar-toggleable-md navbar-light pt-0 pb-0 ">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -170,6 +170,8 @@
               <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fas fa-scroll"></i> <span class="nav-label"> Question Papers</span> <span class="fa fa-chevron-left pull-right"></span> </a>
               <ul class="sub-menu collapse" id="dashboard">
               	<li><%= link_to 'View All Papers',papers_path %></li>
+                <li><%= link_to 'Edit Month', months_path %></li>
+                <li><%= link_to 'Edit Year', years_path %></li>
                 <li class="active"><%= link_to 'Add New Paper',new_paper_path %></li>
                 <% Category.all.each do |f| %>
         		<li><%= link_to f.name ,papers_path(category: f.name) ,class:'nav-cat-link d-block'%></li>
@@ -188,12 +190,27 @@
           <li> <a href="#" data-toggle="collapse" data-target="#users_roles" class="collapsed active" > <i class="fa fa-users"></i> <span class="nav-label">Users</span> <span class="fa fa-chevron-left pull-right"></span> </a>
             <ul class="sub-menu collapse btn-success" id="users_roles">
               <% Role.all.each do |f| %>
-            <li><%= link_to f.name,users_students_index_path %></li>
+              <% if !(f.name == "admin")  %>
+            <li><%= link_to "Students",users_students_path %></li>
+            <% end %>
           <% end %>
           <% Role1.all.each do |f| %>
-            <li><%= link_to f.name,users_teachers_index_path %></li>
+          <% if !(f.name == "admin")  %>
+            <li><%= link_to "Teachers",users_teachers_path %></li>
+            <% end %>
           <% end %>
-          <li><%= link_to 'Add a User',new_student_registration_path %></li>
+        </ul>
+          <li> <a href="#" data-toggle="collapse" data-target="#teacher_profile" class="collapsed active" ><i class="fa fa-users"></i> <span class="nav-label">Teacher Profiles</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+            <ul class="sub-menu collapse btn-success" id="teacher_profile">
+            <li><%= link_to "View all profiles",teacher_profiles_path %></li>
+            <li><%= link_to "Add new Profile",new_teacher_profile_path %></li>
+            </ul>
+          </li>
+
+          <li> <a href="#" data-toggle="collapse" data-target="#courses" class="collapsed active" ><i class="fas fa-award"></i> <span class="nav-label">Courses</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+            <ul class="sub-menu collapse btn-success" id="courses">
+            <li><%= link_to "View Courses",courses_path %></li>
+            <li><%= link_to "Add new Course",new_course_path %></li>
             </ul>
           </li>
 

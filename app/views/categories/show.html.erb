@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<p>
-  <strong>Display in navbar:</strong>
-  <%= @category.display_in_navbar %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="container w-50">
+  <p id="notice"><%= notice %></p>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <th>Label</th>
+    <th>Details</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td><%= @category.name %></td>
+    </tr>
+  </tbody>
+</table>
+<center>
+<%= link_to 'Edit', edit_category_path(@category),class:'btn btn-danger' %> |
+<%= link_to 'Back', categories_path,class:'btn btn-primary' %>
+</center>
+</div>

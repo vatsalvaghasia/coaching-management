@@ -19,6 +19,7 @@
  	font-family: 'Oswald', sans-serif !important;
  }
  body{
+ 	background: white;
  	font-family: sans-serif !important;
  	margin:0 !important;
  }
@@ -57,10 +58,9 @@
 	box-shadow: inset 0px 0px 20px rgba(0,0,0,1);
 	background-image: url("https://www.chevening.org/wp-content/uploads/2019/08/studying-in-the-uk.jpg"); 
 }
-.p-10{
+.p-10,.p-course{
 	padding:100px;
 }
-
 .democlass-card{
 	background-color: rgba(0, 0, 0, 0.8);
 	border:none;
@@ -124,6 +124,12 @@
 }
 .navbar-nav{
 	padding-right: 15px;
+}
+.navbar-toggler{
+	color: white !important;
+	border-radius: 5px;
+	filter: invert(100%);
+	border: 1px solid black !important;
 }
 .navbar-brand{
 	padding: 0;	
@@ -305,7 +311,12 @@ iframe{
 	background-color: #fbeaea;
 	border-radius: 30px;
 }
-
+/* Edit Account */
+.edit-acc-img{
+	background-image: url("contact-us.jpeg");
+	border: 3px solid #ffb3b3;
+}
+/* End Edit Account  */
 /* Contact Us*/
 .contact-us-row{
 	border:3px solid #ffb3b3;
@@ -318,9 +329,9 @@ iframe{
 	padding:4rem;
 }
 
-input:not([type="submit"]):focus, textarea:focus {
+/*input:not([type="submit"]):focus, textarea:focus {
     border-color: #D22B2B;
-}
+}*/
 .contact-us-img{
 	width:100%;
 	height:100%;
@@ -382,7 +393,6 @@ div.contact-us-card{
 }
 
 /* Courses */
-/* courses */
 .course-headings{
   background-color: #D22B2B;
   border-radius: 5px 5px 0px 0px;
@@ -396,10 +406,6 @@ div.contact-us-card{
 	border-radius: 0px 0px 5px 5px;
 }
 
-.carousel-para{
-	padding: 0px 80px 0px 0px;
-  font-size: 1.5vw;
-}
 
 span{
   padding: 10px;
@@ -433,8 +439,62 @@ span{
   padding: 30px;
   color: #D22B2B
 }
-
+/* Question papers */
+.paper-category-link{
+	padding: 5px;
+	color: #808080;
+	text-decoration: none !important;	
+	background-color: #f5f5f5;
+	border: 1px solid #808080;
+}
+.paper-category-link:hover{
+	border: 1px solid white;
+	background-color: black;
+	color: white;
+}
+.pap-col{
+	border-right: 1px solid #808080;
+}
+.thead-red{
+	color: white;
+	background-color: #D22B2B;
+}
+#qptable tbody tr:nth-child(2n+1){
+	background-color: #fbeaea;
+}
+#qptable th,#qptable td{
+	border: 1px solid black;
+}
+.color-red{
+	color: #D22B2B;
+}
+/* End Question papers */
 /* course-details */
+/* Vatsal */
+.course-short-desc{
+	background-color: #D22B2B;
+}
+.course-display-image{
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.bg-white{
+	background-color: white;
+}
+.container-course-structure{
+	border-radius: 20px;
+}
+.container-details table tbody td,.container-details table tbody th{
+	border-color: #404040 ;
+}
+.borderradius-img-lr{
+	border-radius: 20px 0px 0px 20px;
+}
+
+.bg-lightredshade2{
+	background-color: #fbeaea;
+}
+/*Vatsal end*/
 .course-name{
   color: #D22B2B;
   font-size: 1.2em;
@@ -454,6 +514,107 @@ span{
 	filter: invert(100%);
 }
 
+/* Course Details */
+.course-name{
+  color: #D22B2B;
+  font-size: 1.2em;
+  padding: 0px;
+}
+
+
+
+.course-name-img2{
+  height: 23vw;
+  width: 28vw;
+}
+
+.detail-para{
+  background-color: #D22B2B;
+  color: white;
+  padding: 20px;
+}
+
+.course-table{
+  width:100%;
+  border-collapse: collapse;;
+  font-family: sans-serif;
+  background-color: #D22B2B;
+}
+
+.course-table td{
+  border: 1px solid black;
+  padding: 12px 50px;
+  text-align: left;
+  color: #D22B2B;
+}
+
+.course-table tr:nth-child(even){
+  background-color: white;
+  color: #D22B2B;
+}
+
+.course-table tr:nth-child(odd){
+  background-color: #fbeaea;
+}
+
+.course-table tr:hover {
+  background-color: #e99595;
+}
+
+.course-structure-img{
+  height: 32vw;
+  width: 32vw;
+}
+
+.course-req-img{
+  height: 20vw;
+  width: 21vw;
+  margin: -20px 0px 0px 0px;
+}
+
+.course-list-1{
+  padding: 10px 0px 10px 20px;
+  margin: 0px;
+}
+
+.course-list-2{
+  list-style-type: "\2713";
+}
+
+.list-item{
+  padding: 6px;
+}
+
+.custom-hr{
+	margin-top:0;
+ 	width:10em;
+ 	background-color:#D22B2B;
+}
+
+@media only screen and (min-width: 768px){
+  .course-name-img1{
+    height:50vw;
+    width:75vw;
+    margin: 0px 0px 0px 23px;
+  }
+
+  .course-name-img2{
+  	background-repeat: no-repeat;
+  	background-size: cover;
+
+  }
+
+  .course-structure-img{
+    height:55vw;
+    width:55vw;
+    margin: 10px 0px 0px -70px;
+  }
+
+  .course-req-img{
+    height:35vw;
+    width:38vw;
+  }
+}
 
 
 
@@ -491,9 +652,53 @@ span{
 
 }
 
+
+/* Teacher Profile Start */
+.card-teacher-profile{
+	border-radius: 20px;
+	text-align: center;
+	border: 1px solid #404040;
+	background-color: #fbeaea;
+	box-shadow: 20px 20px 42px #d0d0d0;
+}
+.card-teacher-profile span p{
+	margin-bottom: 0px;
+}
+.profile-picture{
+	border-radius: 50%;
+	height: 130px;
+	width: 130px;
+}
+.profile-name{
+	font-size: 25px;
+	font-weight: 600;
+}
+/* Teacher Profile End */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Extra small devices (portrait phones, less than 576px)*/
 /*No media query since this is the default in Bootstrap*/
 @media (max-width: 575px) {
+	.pap-col{
+		border: none;
+	}
+	.p-10{
+		padding: 0;
+	}
 	.phone-margin{
 
 		width: 125%;
@@ -525,15 +730,24 @@ span{
  }
 
 /*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
+
+@media (max-width: 576px) {
 .app-cust-margin{
 	margin: 0 auto;
 }
+.p-course{
+	padding: 50px !important;
+}
+.carousel-para{
+	margin-top: 40px;
+}
+.borderradius-img-lr{
+	border-radius: 20px 20px 0px 0px;
  }
+}
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) { 
-
 .app-cust-margin{
 	margin: 0 auto;
 }
@@ -544,8 +758,8 @@ span{
 .app-cust-margin{
 	margin-left: 200px;
 }
-
  }
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) { ... }
+

@@ -1,6 +1,6 @@
 class YearsController < ApplicationController
   before_action :set_year, only: %i[ show edit update destroy ]
-
+  load_and_authorize_resource
   # GET /years or /years.json
   def index
     @years = Year.all

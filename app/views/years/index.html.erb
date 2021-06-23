@@ -1,12 +1,13 @@
+<div class="conatiner w-50 m-auto">
 <p id="notice"><%= notice %></p>
 
 <h1>Years</h1>
 
-<table>
-  <thead>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
     <tr>
       <th>Paper year</th>
-      <th colspan="3"></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -14,14 +15,12 @@
     <% @years.each do |year| %>
       <tr>
         <td><%= year.paper_year %></td>
-        <td><%= link_to 'Show', year %></td>
-        <td><%= link_to 'Edit', edit_year_path(year) %></td>
-        <td><%= link_to 'Destroy', year, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<i class="far fa-eye"></i>'.html_safe, year %> <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_year_path(year) %>
+        <%= link_to '<i class="fas fa-trash"></i>'.html_safe, year, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Year', new_year_path %>
+<%= link_to 'New Year', new_year_path,class:'btn btn-success' %>
+</div>

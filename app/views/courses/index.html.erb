@@ -1,0 +1,170 @@
+<% if is_teacher_admin? || is_student_admin? %>
+<div class="container">
+  <div class="col-lg-6">
+    <p id="notice"><%= notice %></p>
+<h1>Our Courses</h1>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Course name</th>
+      <th>Description</th>
+      <th>Level</th>
+      <th>Structure</th>
+      <th>Mode</th>
+      <th>Platform</th>
+      <th>Duration</th>
+      <th>Days</th>
+      <th>Timings</th>
+      <th>Age</th>
+      <th>Detailed Structure</th>
+      <th>Requirements</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.c_name %></td>
+        <td><%= course.c_desc[0..100] %></td>
+        <td><%= course.c_level %></td>
+        <td><%= course.c_structure %></td>
+        <td><% if course.c_mode %>Online<% else %>Offline<% end %></td>
+        <td><%= course.c_location %></td>
+        <td><%= course.c_duration %></td>
+        <td><%= course.c_days %></td>
+        <td><%= course.c_time %></td>
+        <td><%= course.c_age %></td>
+        <td><%= course.c_detailed_structure.to_s[0..10] %></td>
+        <td><%= course.c_requirements[0..15] %></td>
+        <td><%= link_to '<i class="far fa-eye"></i>'.html_safe, course %><br>
+        <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_course_path(course) %><br>
+        <%= link_to '<i class="fas fa-trash"></i>'.html_safe, course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course', new_course_path ,class:'btn btn-success'%>
+
+  </div>  
+</div>
+<% else%>
+<div class="container p-5 m-cust">
+  <div class="col-lg-12">
+      <h1 class="text-center">Our Courses</h1>
+      <hr class="custom-hr"><br>
+    </div>
+  <div class="row">
+    <% @courses.each do |course| %>
+    <div class="col-lg-12 mb-5">
+    <div class="col-lg-12 course-headings text-white p-3">
+      <span><%= "Course " + course.id.to_s %></span><br>
+      <h3>
+        <span><%= course.c_name %></span></h3>
+    </div>
+    <div class="col-lg-12 border-cust row">
+      <div class="course-body col-lg-6 col-md-6 p-5">
+      <p><%= course.c_desc[0..300] + '...' %></p>
+        <div class="course-button">
+      <%= link_to 'More Details', course, class:'btn btn-outline-danger' %>
+    </div>
+    </div>
+    <div class="course-img col-lg-6 col-md-6 text-right">
+      <%= image_tag course.image1,style:"height:17vw;width:25vw;" %>
+    </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
+
+
+
+<!-- XXX -->
+
+
+<div class="container-fluid about-us-service row">
+  <div class="col-lg-12">
+      <h1 class="text-center text-dark text-uppercase">Who should take this course?</h1>
+      <hr class="custom-hr"><br>
+    </div>
+  <div class="row justify-content-between">
+    <div class="about-card p-5 col-lg-4 col-sm-12 d-flex flex-row">
+      <div><i class="fas fa-3x fa-user-graduate p-3"></i></div>
+      <div class="text-left">
+        <h3>Students</h3>
+        <p>Students who are in college or recent graduates who wish to pursue their career in Digital Marketing can apply. This course will lay a solid foundation, provide certifications, and help you land a job as a Digital Marketer.</p>
+      </div>
+    </div>
+    <div class="about-card p-5 col-lg-4 col-sm-12 d-flex flex-row">
+      <div><i class="fas fa-3x fa-user p-3"></i></div>
+      <div class="text-left">
+        <h3>Professionals</h3>
+        <p>Professionals who wish to have a profile switch to Digital Marketing or who seek to add digital expertise to their existing profile can make use of this course and add an array of certifications to your name.</p>
+      </div>
+    </div>
+    <div class="about-card p-5 col-lg-4 col-sm-12 d-flex flex-row">
+      <div><i class="fas fa-3x fa-user-tie p-3"></i></div>
+      <div class="text-left">
+        <h3>Entrepreneurs & Freelancers</h3>
+        <p>Freelancers who want to grow their income exponentially. Entrepreneurs who want to understand Digital Marketing to strategize and govern their existing digital marketing activities.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+<!-- XXX -->
+
+<div class="container-fluid choose-us p-5 m-cust">
+  <h2 class="text-center text-uppercase">Why choose us?</h2>
+  <hr class="custom-hr">
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 col-xs-12 p-4">
+      <h5>
+        <strong>Internship Opportunities:</strong>
+      </h5>
+      <p class="choose-para">
+        Depending on your performance during the course, we may offer you an internship. The internship helps gain practical and hands-on experience.
+      </p>
+    </div>
+    <div class="col-lg-4 col-sm-6 col-xs-12 p-4">
+      <h5>
+        <strong>Certificate on completion:</strong>
+      </h5>
+      <p class="choose-para">A certificate can help boost your CV and resume. Thus a certificate is awarded to everyone who successfully attends the entire duration of the course.</p>
+    </div>
+    <div class="col-lg-4 col-sm-6 col-xs-12 p-4">
+      <h5>
+        <strong>Live and online classes:</strong>
+      </h5>
+      <p class="choose-para">The classes are conducted live and in online mode in order to enable direct interaction between students and the lecturer.</p>
+    </div>
+    <div class="col-lg-4 col-sm-6 col-xs-12 p-4">
+      <h5>
+        <strong>Interactive Classes:</strong>
+      </h5>
+      <p class="choose-para">The course is structured to break the monotony of classes and keep it interactive. QnA rounds and rapid fires are included to enhance the student’s interest.</p>
+    </div>
+    <div class="col-lg-4 col-sm-6 col-xs-12 p-4">
+      <h5>
+        <strong>Weekend Batches:</strong>
+      </h5>
+      <p class="choose-para">The lectures are conducted on weekends so that your daily weekday routine doesn’t come in the way of your learning.</p>
+    </div>
+    <div class="col-lg-4 col-sm-6 col-xs-12 p-4">
+      <h5>
+        <strong>Structured Courses:</strong>
+      </h5>
+      <p class="choose-para">Courses are drafted keeping in mind the latest trends and demands of the industry and a practical approach is used.</p>
+    </div>
+  </div>
+</div>
+
+<h1 class="join">Join Us Today!</h1>
+
+
+<% end %>

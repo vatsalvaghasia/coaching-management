@@ -10,18 +10,16 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :month_name %>
-    <%= form.text_field :month_name %>
+  <div class="form-group">
+    <%= form.text_field :month_name ,class:'form-control',placeholder:'Month Name'%>
   </div>
 
-  <div class="field">
-    <%= form.label :month_number %>
-    <%= form.number_field :month_number %>
+  <div class="form-group">
+    <%= form.number_field :month_number,class:'form-control',placeholder:'Month number' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add Month",class:'btn btn-danger' %>
   </div>
-<% end %>
+<% end %>  
+

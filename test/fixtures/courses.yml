@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  c_name: MyString
+  c_desc: MyString
+  c_level: MyString
+  c_structure: MyString
+  c_mode: false
+  c_location: MyString
+  c_duration: 1
+  c_days: MyString
+  c_time: MyString
+  c_age: 1
+  c_detailed_structure: MyString
+  c_requirements: MyString
+
+two:
+  c_name: MyString
+  c_desc: MyString
+  c_level: MyString
+  c_structure: MyString
+  c_mode: false
+  c_location: MyString
+  c_duration: 1
+  c_days: MyString
+  c_time: MyString
+  c_age: 1
+  c_detailed_structure: MyString
+  c_requirements: MyString

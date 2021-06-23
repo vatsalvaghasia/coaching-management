@@ -1,9 +1,19 @@
+<div class="container w-50">
 <p id="notice"><%= notice %></p>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <th>Label</th>
+    <th>Details</th>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Paper Year</th>
+      <td><%= @year.paper_year %></td>
+    </tr>
+  </tbody>
 
-<p>
-  <strong>Paper year:</strong>
-  <%= @year.paper_year %>
-</p>
 
-<%= link_to 'Edit', edit_year_path(@year) %> |
-<%= link_to 'Back', years_path %>
+</table>
+<%= link_to 'Edit', edit_year_path(@year),class:'btn btn-danger mt-3' %> |
+<%= link_to 'Back', years_path ,class:'btn btn-primary mt-3' %>  
+</div>

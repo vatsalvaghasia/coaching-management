@@ -1,14 +1,24 @@
+<div class="container w-50">
 <p id="notice"><%= notice %></p>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <th>Label</th>
+    <th>Details</th>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Month number</th>
+      <td><%= @month.month_name %></td>
+    </tr>
+    <tr>
+      <th>Month name</th>
+      <td><%= @month.month_number %></td>
+    </tr>
 
-<p>
-  <strong>Month name:</strong>
-  <%= @month.month_name %>
-</p>
+  </tbody>
 
-<p>
-  <strong>Month number:</strong>
-  <%= @month.month_number %>
-</p>
 
-<%= link_to 'Edit', edit_month_path(@month) %> |
-<%= link_to 'Back', months_path %>
+</table>
+<%= link_to 'Edit', edit_month_path(@month),class:'btn btn-danger mt-3' %> |
+<%= link_to 'Back', months_path ,class:'btn btn-primary mt-3' %>  
+</div>

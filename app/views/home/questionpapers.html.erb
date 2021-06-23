@@ -1,0 +1,32 @@
+<div class="container m-cust p-10">
+<div class="row">
+	<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 pap-col">
+		<h3 class="mb-4">Previous Papers</h3>
+		<table  class="table table-bordered table-striped" id="qptable">
+		<thead class="thead-red">
+			<th>Paper Categories</th>
+			<th>Paper Year</th>
+			<th>View/Download</th>
+		</thead>
+		<tbody class="text-center">
+		<% @papers.each do |paper|%>
+		<tr>
+			<td><%= paper.category.name  %></td>
+			<td><%= paper.month.month_name.to_s + "-" + paper.year.paper_year.to_s %></td>
+			<td> <%= link_to '<i class="fas fa-eye"></i>'.html_safe,rails_storage_redirect_path(paper.file),target: "_blank",class:'color-red' %>
+				<%= link_to '<i class="fas fa-download"></i>'.html_safe ,Rails.application.routes.url_helpers.rails_blob_path(paper.file, only_path: true) , Download:'',class:'color-red' %>
+		<% end %></td>
+		<tr>
+		</tbody>
+	</table>
+	</div>
+	<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 ">
+		<h3 class="mb-4">Categories</h3>
+		<% @category.each do |pcat| %>
+		<%= link_to pcat.name, home_questionpapers_path(category: pcat.name) ,class:'d-inline-block paper-category-link mb-3'%>
+		<% end %>
+		<%= link_to "All" ,home_questionpapers_path,class:'d-inline-block paper-category-link'%>
+	</div>
+</div>
+</div>
+	

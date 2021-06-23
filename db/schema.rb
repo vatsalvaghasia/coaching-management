@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_14_163706) do
+ActiveRecord::Schema.define(version: 2021_06_22_171233) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,23 @@ ActiveRecord::Schema.define(version: 2021_06_14_163706) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.boolean "display_in_navbar"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "c_name"
+    t.string "c_desc"
+    t.string "c_level"
+    t.string "c_structure"
+    t.boolean "c_mode", default: false
+    t.string "c_location"
+    t.integer "c_duration"
+    t.string "c_days"
+    t.string "c_time"
+    t.integer "c_age"
+    t.string "c_detailed_structure"
+    t.string "c_requirements"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -97,8 +114,8 @@ ActiveRecord::Schema.define(version: 2021_06_14_163706) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.integer "phone"
+    t.string "student_name"
+    t.string "phone"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
@@ -109,6 +126,17 @@ ActiveRecord::Schema.define(version: 2021_06_14_163706) do
     t.index ["role_id"], name: "index_students_roles_on_role_id"
     t.index ["student_id", "role_id"], name: "index_students_roles_on_student_id_and_role_id"
     t.index ["student_id"], name: "index_students_roles_on_student_id"
+  end
+
+  create_table "teacher_profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.float "experience"
+    t.string "subject"
+    t.boolean "mode_to_teach", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "exp_months", default: 0
   end
 
   create_table "teachers", force: :cascade do |t|

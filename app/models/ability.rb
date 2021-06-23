@@ -3,13 +3,35 @@
 class Ability
   include CanCan::Ability
   def initialize(user)
+    user ||= Student.new
+      can :read,Course
+      can :read,TeacherProfile
+      can :read,Paper
     if user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :teacher
-      can :manage, Paper,Category
-    else
-    can :read, Paper 
+      cannot :manage,Year
+      cannot :manage,Month
+      cannot :manage,Role1
+      cannot :manage,Role
+      cannot :manage,Category
+      can :read,Course
+      can :read,Paper
+      can :create,Paper 
+      can :read,TeacherProfile   
+    elsif user.has_role? :student
+      cannot :manage,Year
+      cannot :manage,Month
+      cannot :manage,Role1
+      cannot :manage,Role
+      cannot :manage,Category
+      cannot :manage,Paper
+      can :read, Course
+      can :read, TeacherProfile
     end
+      can :read,Course
+      can :read,TeacherProfile
+      can :read,Paper
 end
     # Define abilities for the passed in user here. For example:
     #

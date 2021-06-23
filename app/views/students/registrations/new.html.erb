@@ -1,10 +1,13 @@
-<div class= "container-fluid cust-bg-img m-cust p-5">
+  <div class= "container-fluid cust-bg-img m-cust p-5">
 <div class="row">
   <div class="card-signin col-lg-4 p-4 m-auto">
 <h2 class="text-center">Sign Up</h2>
 <hr class="custom-hr">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "students/shared/error_messages", resource: resource %>
+  <div class="form-group">
+    <%= f.text_field :student_name , autocomplete: "student_name",placeholder:'Student Name',class:'form-control'%>
+  </div>
   <div class="form-group">
     <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:'Enter email' ,class:'form-control'%>
     <small class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -17,19 +20,11 @@
     <small class="form-text text-muted">(<%= @minimum_password_length %> characters minimum)</small>
   </div>
   <div class="form-group">
-    <%= f.text_field :name , autocomplete: "name",placeholder:'Student Name',class:'form-control'%>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:'Re-enter Password',class:'form-control' %>
   </div>
   <div class="form-group">
     <%= f.text_field :phone, autocomplete: "phone",placeholder:'Student Phone',class:'form-control' %>
   </div>
-
-  <div class="form-group">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:'Re-enter Password',class:'form-control' %>
-  </div>
-
-
-
-
     <%= f.submit "Sign up" ,class:'btn btn-danger bg-red form-control'%>
 
 <% end %>

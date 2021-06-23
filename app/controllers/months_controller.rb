@@ -1,6 +1,6 @@
 class MonthsController < ApplicationController
   before_action :set_month, only: %i[ show edit update destroy ]
-
+  load_and_authorize_resource
   # GET /months or /months.json
   def index
     @months = Month.all

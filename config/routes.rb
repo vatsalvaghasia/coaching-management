@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :courses
+  resources :teacher_profiles
+  get 'errors/page404'
   namespace :users do
     get 'students/index'
     resources :students, only: [:index, :show]
@@ -14,8 +17,6 @@ Rails.application.routes.draw do
   devise_for :students, controllers: {
         sessions: 'students/sessions'
       }
-
-
   resources :papers
   resources :months
   resources :years
@@ -24,19 +25,21 @@ Rails.application.routes.draw do
   #get 'home/index'
   get 'home/courses'
   get 'home/new'
-  get 'home/signup'
   get 'home/contact'
-  get 'home/login'
   get 'home/about'
-  #get 'home/admin'
+  get 'home/course_details'
+  get 'home/questionpapers'
   root 'home#index'
   
   match '/users/teachers',   to: 'users/teachers#index',   via: 'get'
-  match '/users/teachers/edit',   to: 'users/teachers#edit',   via: 'get'
+  match '/users/teachers/:id',   to: 'users/teachers#show',   via: 'get'
+  match '/users/teachers/:id' => 'users/teachers#destroy', :via => :delete, :as => :admin_destroy_teacher
+
 resources :sessions, :only => [:create]
 #   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 # match '/users',   to: 'users#index',   via: 'get'
 # match '/users/:id',     to: 'users#show', via: 'get'
 match '/users/students',   to: 'users/students#index',   via: 'get'
 match '/users/students/:id',     to: 'users/students#show',       via: 'get'
+match '/users/students/:id' => 'users/students#destroy', :via => :delete, :as => :admin_destroy_student
 end

@@ -1,18 +1,15 @@
 class PapersController < ApplicationController
-  before_action :logged_in_user
+
   before_action :set_paper, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
   # GET /papers or /papers.json
-  def logged_in_user
-    if !is_student_admin?
-      redirect_to root_path
-    end
-  end
   def index
     if params.has_key?(:category)
       @category = Category.find_by_name(params[:category])
       @papers = Paper.where(category: @category)
     else
     @papers = Paper.all
+    authorize! :read, @papers
   end
   end
 
