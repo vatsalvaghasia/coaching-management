@@ -1,11 +1,7 @@
 class TeacherProfilesController < ApplicationController
   load_and_authorize_resource
   before_action :set_teacher_profile, only: %i[ show edit update destroy ]
-  def logged_in_user
-    if !is_student_admin? 
-      redirect_to errors_page404_path
-    end
-  end
+
   # GET /teacher_profiles or /teacher_profiles.json
   def index
     @teacher_profiles = TeacherProfile.all

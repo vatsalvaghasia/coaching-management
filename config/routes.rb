@@ -21,13 +21,9 @@ Rails.application.routes.draw do
   resources :months
   resources :years
   resources :categories
-  
-  #get 'home/index'
-  get 'home/courses'
   get 'home/new'
   get 'home/contact'
   get 'home/about'
-  get 'home/course_details'
   get 'home/questionpapers'
   root 'home#index'
   
@@ -36,9 +32,7 @@ Rails.application.routes.draw do
   match '/users/teachers/:id' => 'users/teachers#destroy', :via => :delete, :as => :admin_destroy_teacher
 
 resources :sessions, :only => [:create]
-#   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-# match '/users',   to: 'users#index',   via: 'get'
-# match '/users/:id',     to: 'users#show', via: 'get'
+# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 match '/users/students',   to: 'users/students#index',   via: 'get'
 match '/users/students/:id',     to: 'users/students#show',       via: 'get'
 match '/users/students/:id' => 'users/students#destroy', :via => :delete, :as => :admin_destroy_student

@@ -1,11 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
   load_and_authorize_resource 
-  def logged_in_user
-    if !(is_student_admin? || is_teacher_admin?)
-      redirect_to errors_page404_path
-    end
-  end
+
   # GET /courses or /courses.json
   def index
     @courses = Course.all

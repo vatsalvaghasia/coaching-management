@@ -225,9 +225,6 @@ footer{
 	box-shadow: 0px -8px 8px -6px rgba(0,0,0,.5);
 }
 
-
-
-/* Shivangi CSS for section 1 and section 2*/
  .abouts .card{
    width:100%;
    border:1px solid black;
@@ -470,7 +467,6 @@ span{
 }
 /* End Question papers */
 /* course-details */
-/* Vatsal */
 .course-short-desc{
 	background-color: #D22B2B;
 }
@@ -494,7 +490,7 @@ span{
 .bg-lightredshade2{
 	background-color: #fbeaea;
 }
-/*Vatsal end*/
+
 .course-name{
   color: #D22B2B;
   font-size: 1.2em;
