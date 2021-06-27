@@ -73,7 +73,11 @@
     </div>
     </div>
     <div class="course-img col-lg-6 col-md-6 text-right">
+      <% if course.image1.attached? %>
       <%= image_tag course.image1,style:"height:17vw;width:25vw;" %>
+      <% else %>
+      <%= image_tag("course6.jpg",style:"height:17vw;width:25vw;") %>
+      <% end %>
     </div>
     </div>
   </div>

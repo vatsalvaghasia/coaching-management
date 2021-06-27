@@ -44,7 +44,7 @@
         </tr>
         <tr>
           <th>Mode</th>
-          <td><%= @course.c_mode %></td>
+          <td><%if @course.c_mode %>Online<% else %>Offline<% end %></td>
         </tr>
         <tr>
           <th>Location</th>
@@ -145,7 +145,13 @@
 </tr>
 <tr>
   <th>Image for Description</th>
-  <td><%= image_tag @course.image1,style:"height:17vw;width:25vw;"%></td>
+  <td>
+    <% if @course.image1.attached? %>
+      <%= image_tag (@course.image1),style:"height:17vw;width:25vw;" %>
+      <% else %>
+      <%= image_tag("course6.jpg",style:"height:17vw;width:25vw;") %>
+      <% end %>
+  </td>
 </tr>
 <tr>
   <th>Level</th>
@@ -201,7 +207,13 @@
 </tr>
 <tr>
   <th>Image for Detailed Structure</th>
-  <td><%= image_tag @course.image2,style:"height:17vw;width:25vw;"%></td>
+  <td>
+    <% if @course.image2.attached? %>
+      <%= image_tag @course.image2 ,style:"height:17vw;width:25vw;" %>
+      <% else %>
+      <%= image_tag("course7.jpg",style:"height:17vw;width:25vw;")%>
+      <% end %>
+  </td>
 </tr>
 <tr>
   <th>Requirements</th>
@@ -211,7 +223,13 @@
 </tr>
 <tr>
   <th>Image for Requirements</th>
-  <td><%= image_tag @course.image1,style:"height:17vw;width:25vw;"%></td>
+  <td>
+    <% if @course.image3.attached? %>
+      <%= image_tag @course.image3,style:"height:17vw;width:25vw;" %>
+      <% else %>
+      <%= image_tag("course6.jpg",style:"height:17vw;width:25vw;")%>
+      <% end %>
+  </td>
 </tr>
 </table>
 <center>

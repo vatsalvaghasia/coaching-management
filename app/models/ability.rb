@@ -29,9 +29,6 @@ class Ability
       can :read, Course
       can :read, TeacherProfile
     end
-      can :read,Course
-      can :read,TeacherProfile
-      can :read,Paper
 end
     # Define abilities for the passed in user here. For example:
     #

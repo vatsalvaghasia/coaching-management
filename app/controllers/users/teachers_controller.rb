@@ -1,7 +1,5 @@
 class Users::TeachersController < ApplicationController
-
   before_action :logged_in_user
-
   def index
     @teachers = Teacher.all
   end

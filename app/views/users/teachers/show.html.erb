@@ -1,0 +1,16 @@
+<div class="container float-right">
+	<h1>Teacher Details</h1>
+<table class="table table-bordered table-striped">
+	<thead class="thead-dark">
+		<th>Teacher Id</th>
+		<th>Teacher Email</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @teacher.id %></td>
+			<td><%= @teacher.email %></td>
+		</tr>
+	</tbody>
+</table>
+<% link_to "Back", users_teacher_path, class:'btn btn-primary' %>
+</div>

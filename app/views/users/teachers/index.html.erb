@@ -12,8 +12,7 @@
 <tr>
 	<td><%= t.id %></td>
 	<td><%= t.email %></td>
-	<td><%= link_to '<i class="far fa-eye"></i>'.html_safe , users_teacher_path(t) %>
-		<%= link_to '<i class="fas fa-trash"></i>'.html_safe, admin_destroy_teacher_path(t), method: :delete, data: { confirm: "You sure?" } %>
+	<td><%= link_to '<i class="fas fa-trash"></i>'.html_safe, admin_destroy_teacher_path(t), method: :delete, data: { confirm: "You sure?" } %>
 	</td>
 <tr>
 	<% end %>

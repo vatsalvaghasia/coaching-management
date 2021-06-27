@@ -43,7 +43,11 @@
 <% @teacher_profiles.each do |teacher_profile| %>
       <div class="col-lg-4 p-4">
         <div class="card-teacher-profile p-4">
-          <%= image_tag teacher_profile.avatar ,class:'profile-picture mt-3' %><br/>
+          <% if teacher_profile.avatar.attached? %>
+        <%= image_tag teacher_profile.avatar ,class:'profile-picture mt-3' %><br/>
+        <%  else %>
+        <%= image_tag("default-avatar.jpg",:class=>'profile-picture mt-3') %><br />
+        <% end %>
         <p class="text-center pt-4 profile-name"><%= teacher_profile.name.upcase  %></p>
         <p class="text-left"><b>Email: </b><%= teacher_profile.email %></p>
         <p class="text-left"><b>Experience: </b><%= teacher_profile.experience.to_s.split('.')[0] + ' Years'%>

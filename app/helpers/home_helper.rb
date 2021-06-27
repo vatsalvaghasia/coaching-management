@@ -11,7 +11,7 @@ module HomeHelper
     @devise_mapping ||= Devise.mappings[:student]
   end
 
-    def resource_name1
+  def resource_name1
     :teacher
   end
  
